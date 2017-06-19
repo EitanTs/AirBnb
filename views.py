@@ -30,7 +30,7 @@ def first_sign_in_step():
 
 
 @app.route('/sign_in_owner', methods=['POST'])
-def second_sign_in_step():
+def owner_sign_in():
     form = request.form
     building = form.get('building')
     room_number = form.get('room_number')
@@ -51,6 +51,16 @@ def second_sign_in_step():
 
     for param in Configuration.REVIEW_PARAMS:
         rateing_object = TableRoomRating(room_id=room_id, param_key=param, param_value=form.get(param), user_id=session['user_id'])
+        SqlExecuter().insert_object_to_db(rateing_object)
+
+    return render_template('gallery.html')
+
+
+@app.route('/sign_in_renter', methods=['POST'])
+def renter_sign_in():
+    form = request.form
+    for param in Configuration.REVIEW_PARAMS:
+        rateing_object = TableRoomRating(param_key=param, param_value=form.get(param), user_id=session['user_id'])
         SqlExecuter().insert_object_to_db(rateing_object)
 
     return render_template('gallery.html')
