@@ -15,7 +15,6 @@ import Configuration
 app = Flask(__name__)
 app.secret_key = '123'
 
-
 @app.route('/sign_in')
 def sign_in():
     return render_template('SignInForm.html')
@@ -51,8 +50,8 @@ def second_sign_in_step():
     SqlExecuter().insert_object_to_db(room_table)
 
     for param in Configuration.REVIEW_PARAMS:
-        rating_object = TableRoomRating(room_id=room_id, param_key=param, param_value=form.get(param), user_id=session['user_id'])
-        SqlExecuter().insert_object_to_db(rating_object)
+        rateing_object = TableRoomRating(room_id=room_id, param_key=param, param_value=form.get(param), user_id=session['user_id'])
+        SqlExecuter().insert_object_to_db(rateing_object)
 
     return render_template('gallery.html')
 
