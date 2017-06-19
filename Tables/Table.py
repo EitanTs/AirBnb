@@ -13,3 +13,4 @@ class Table(object):
             params_format += self.PARAM
         params_format = params_format[:-1]
         return self.INSERT_QUERY.format(table_name=self.table_name, params_format=params_format)
+
