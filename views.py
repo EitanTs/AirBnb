@@ -3,9 +3,10 @@ Routes and views for the flask application.
 """
 
 from datetime import datetime
-from flask import render_template
-from FlaskWebProject1 import app
+from flask import render_template, Flask
+import Configuration
 
+app = Flask(__name__)
 
 @app.route('/')
 @app.route('/home')
@@ -38,3 +39,7 @@ def about():
         year=datetime.now().year,
         message='Your application description page.'
     )
+
+@app.route('/tom')
+def tryy():
+    return render_template('SignInSecondStep.html', param_list=Configuration.REVIEW_PARAMS, title='Owner')
