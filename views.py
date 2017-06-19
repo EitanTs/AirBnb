@@ -3,7 +3,9 @@ Routes and views for the flask application.
 """
 
 from datetime import datetime
-from flask import render_template, app
+from flask import render_template, Flask
+
+app = Flask(__name__)
 
 
 @app.route('/')

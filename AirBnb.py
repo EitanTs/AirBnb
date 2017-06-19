@@ -1,11 +1,5 @@
-from flask import Flask
-
-app = Flask(__name__)
-
-
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
+from flask import Flask, render_template
+from views import app
 
 
 if __name__ == '__main__':
