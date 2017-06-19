@@ -6,7 +6,7 @@ join RoomRating as r
 on r.RoomId = b.RoomId
 where 1=1
 and date between '{check_in}' and '{check_out}'
-and RenterId = ''
+and RenterId is NULL
 group by date, r.ParamKey, b.BedId"""
 
 
