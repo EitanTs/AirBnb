@@ -9,7 +9,7 @@ class TableRooms(Table):
         super(TableRooms, self).__init__(self.TABLE_NAME)
         self.room_id = room_id
         self.building = building
-        self.room_number = room_number
+        self.room_number = int(room_number)
         if picture_path:
             self.picture_path = picture_path
         else:
