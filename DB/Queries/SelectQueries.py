@@ -14,3 +14,26 @@ USER_PREFRENCES = """ select ParamKey, ParamValue
 from Preferences
 where 1=1
 and UserId = '{user_id}'"""
+
+BED_OFFER_INFO = """ select BedId as place, UserId, description, RoomId
+from Beds
+where 1=1
+and BedId = '{BedId}' """
+
+FULL_NAME_FROM_USER_ID = """ select FirstName, LastName
+from Users
+where UserId = '{user_id}' """
+
+LAST_BED_ID_USAGE = """ select max(date) as last_usage
+from Availabilities
+where BedId = '{bed_id}'
+and RenterId is not NULL """
+
+GET_ROOM_PICTURE_PATH ="""
+select PicturePath
+from Rooms
+where RoomId = '{room_id}' """
+
+VALIDE_USER_AND_PASSWORD = """ SELECT EXISTS (
+  SELECT * FROM Users WHERE UserId = '{user_id}' AND Password = '{password}'
+) as valid"""

@@ -1,11 +1,12 @@
 __author__ = 'Ido Bichler'
 
 from Manager.BedManager import BedManager
+from Manager.LoginManager import LoginManager
 
 
 def test_sanity():
-    beds_objects = BedManager('tom', '19/06/2017', '20/06/2017').get_relevant_beds_scores()
-    return beds_objects
+
+    print LoginManager('tom', '1234356789').is_valid()
 
 if __name__ == '__main__':
     test_sanity()

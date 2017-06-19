@@ -2,7 +2,7 @@
 Routes and views for the flask application.
 """
 
-from flask import render_template, Flask, request, session
+from flask import render_template, Flask, request, session, url_for
 from Tables.TableUsers import TableUsers
 from Tables.TableRooms import TableRooms
 from Tables.TableRoomRating import TableRoomRating
@@ -10,6 +10,7 @@ from Tables.TableBeds import TableBeds
 from Tables.TableAvailabilities import TableAvailabilities
 from Tables.TablePreferences import TablePreferences
 from Manager.BedManager import BedManager
+from Manager.LoginManager import LoginManager
 from DB.SqlExecuter import SqlExecuter
 import Configuration
 
@@ -53,6 +54,10 @@ def owner_sign_in():
     SqlExecuter().insert_object_to_db(bed_object)
     SqlExecuter().insert_object_to_db(room_table)
 
+    rating_object = TableRoomRating(room_id=room_id, param_key='description', param_value=form.get('description'),
+                                    user_id=session['user_id'])
+    SqlExecuter().insert_object_to_db(rating_object)
+
     for param in Configuration.REVIEW_PARAMS:
         rating_object = TableRoomRating(room_id=room_id, param_key=param, param_value=form.get(param),
                                         user_id=session['user_id'])
@@ -70,11 +75,35 @@ def renter_sign_in():
 
     return render_template('gallery.html')
 
-@app.route('/home')
-def home():
+
+@app.route('/get_beds/<check_in>/<check_out>')
+def get_beds(check_in, check_out):
+    beds_objects = BedManager(session['user_id'], check_in, check_out)
+    return render_template('beds.html', bed_objects=beds_objects)
+
+
+@app.route('/login', methods=['POST'])
+def login():
     form = request.form
-    beds_objects = BedManager(session['user_id'], form.get('check_in'), form.get('check_out'))
-    return render_template('gallery', beds_objects=beds_objects)
+    is_valid = LoginManager(form.get('user_id'), form.get('password'))
+    if is_valid:
+        return render_template('index.html')
+    return render_template('login.html')
+
+
+@app.route('/review', methods=['POST'])
+def enter_bed_review():
+    form = request.form
+    room_id = form.get('room_id')
+    current_user = session['user_id']
+    rating_object = TableRoomRating(room_id=room_id, param_key='description', param_value=form.get('description'),
+                                    user_id=current_user)
+    SqlExecuter().insert_object_to_db(rating_object)
+
+    for param in Configuration.REVIEW_PARAMS:
+        rating_object = TableRoomRating(room_id=room_id, param_key=param, param_value=form.get(param),
+                                        user_id=current_user)
+        SqlExecuter().insert_object_to_db(rating_object)
 
 
 def generate_bed_id(building, room_number, bed_number):

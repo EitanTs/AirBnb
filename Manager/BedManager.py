@@ -17,6 +17,9 @@ class BedManager(object):
         relevant_beds.sort(key=self._get_bed_score)
         return relevant_beds
 
+    def get_bed_data(self):
+        return [bed.get_bed_offer_data() for bed in self.get_relevant_beds_scores()]
+
     @staticmethod
     def _get_bed_score(bed_object):
         return bed_object.score
