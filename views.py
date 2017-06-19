@@ -15,6 +15,7 @@ import Configuration
 app = Flask(__name__)
 app.secret_key = '123'
 
+@app.route('/')
 @app.route('/sign_in')
 def sign_in():
     return render_template('SignInForm.html')
@@ -50,8 +51,8 @@ def owner_sign_in():
     SqlExecuter().insert_object_to_db(room_table)
 
     for param in Configuration.REVIEW_PARAMS:
-        rateing_object = TableRoomRating(room_id=room_id, param_key=param, param_value=form.get(param), user_id=session['user_id'])
-        SqlExecuter().insert_object_to_db(rateing_object)
+        rating_object = TableRoomRating(room_id=room_id, param_key=param, param_value=form.get(param), user_id=session['user_id'])
+        SqlExecuter().insert_object_to_db(rating_object)
 
     return render_template('gallery.html')
 
