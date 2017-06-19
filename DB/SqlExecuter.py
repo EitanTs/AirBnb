@@ -43,3 +43,6 @@ class SqlExecuter(DbConfiguration):
                 row_json[cols[i]] = row[i]
             json_array.append(row_json)
         return json_array
+
+    def insert_object_to_db(self, table_obj):
+        self.execute_query(table_obj.generate_insert_query(), table_obj.values)
