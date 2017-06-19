@@ -39,7 +39,7 @@
 	               	</div>
 	            </div>
 				<div class="main-login main-center">
-					<form class="form-horizontal" method="post" action="#">
+					<form class="form-horizontal" method="post" action="/sign_in_owner">
 						<div class="form-group">
 							<label for="name" class="cols-sm-2 control-label">Building</label>
 							<div class="cols-sm-10">
@@ -76,7 +76,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="Description" id="Description"  placeholder="Enter your Room Description"/>
+									<input type="text" class="form-control" name="description" id="description"  placeholder="Enter your Room Description"/>
 								</div>
 							</div>
 						</div>
@@ -92,7 +92,7 @@
 
 
 						<div class="form-group ">
-							<button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-button">Register</button>
 						</div>
 						<div class="login-register">
 				            <a href="index.php">Login</a>
@@ -115,7 +115,7 @@
 	               	</div>
 	            </div>
 				<div class="main-login main-center">
-					<form class="form-horizontal" method="post" action="#">
+					<form class="form-horizontal" method="post" action="/sign_in_renter">
 					<p>Enter your room dreams requirements</p>
 						{% for param in param_list %}
 						        <span>{{ param }}</span>
@@ -129,7 +129,7 @@
 
 
 						<div class="form-group ">
-							<button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+							<button type="submit" class="btn btn-primary btn-lg btn-block login-button">Register</button>
 						</div>
 						<div class="login-register">
 				            <a href="index.php">Login</a>
