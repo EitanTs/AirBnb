@@ -18,12 +18,15 @@ class BedSerializer(object):
         for row in data:
             bed_id = row.get('BedId')
             param_key = row.get('ParamKey')
-            param_value = row.get('ParamValue')
-
+            param_value = row.get('average')
+            date = row.get('Date')
             if beds_dict.get(bed_id):
-                beds_dict[bed_id].set(param_key, param_value)
+                beds_dict[bed_id][param_key] = param_value
+                if date not in beds_dict[bed_id]['dates']:
+                    beds_dict[bed_id]['dates'].append(date)
             else:
                 beds_dict[bed_id] = {param_key: param_value}
+                beds_dict[bed_id]['dates'] = [date]
         return beds_dict
 
     def serialize_bed_objects(self):

@@ -2,7 +2,6 @@
 Routes and views for the flask application.
 """
 
-from datetime import datetime
 from flask import render_template, Flask, request, session
 from Tables.TableUsers import TableUsers
 from Tables.TableRooms import TableRooms
@@ -10,6 +9,7 @@ from Tables.TableRoomRating import TableRoomRating
 from Tables.TableBeds import TableBeds
 from Tables.TableAvailabilities import TableAvailabilities
 from Tables.TablePreferences import TablePreferences
+from Manager.BedManager import BedManager
 from DB.SqlExecuter import SqlExecuter
 import Configuration
 
@@ -69,6 +69,12 @@ def renter_sign_in():
         SqlExecuter().insert_object_to_db(rating_object)
 
     return render_template('gallery.html')
+
+@app.route('/home')
+def home():
+    form = request.form
+    beds_objects = BedManager(session['user_id'], form.get('check_in'), form.get('check_out'))
+    return render_template('gallery', beds_objects=beds_objects)
 
 
 def generate_bed_id(building, room_number, bed_number):
