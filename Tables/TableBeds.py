@@ -15,5 +15,5 @@ class TableBeds(Table):
 
     @property
     def values(self):
-        return self.bed_id, self.user_id, self.bed_number, self.room_id, self.description
+        return self.bed_id, self.user_id, self.room_id, self.bed_number, self.description
 

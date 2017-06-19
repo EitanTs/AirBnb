@@ -9,11 +9,13 @@ from Tables.TableRooms import TableRooms
 from Tables.TableRoomRating import TableRoomRating
 from Tables.TableBeds import TableBeds
 from Tables.TableAvailabilities import TableAvailabilities
+from Tables.TablePreferences import TablePreferences
 from DB.SqlExecuter import SqlExecuter
 import Configuration
 
 app = Flask(__name__)
 app.secret_key = '123'
+
 
 @app.route('/')
 @app.route('/sign_in')
@@ -25,7 +27,9 @@ def sign_in():
 def first_sign_in_step():
     form = request.form
     session['user_id'] = form.get('user_id')
-    table_user = TableUsers(**form)
+    table_user = TableUsers(user_id=form.get('user_id'), password=form.get('password'),
+                            first_name=form.get('first_name'), last_name=form.get('last_name'),
+                            phone_number=form.get('phone_number'), voip=form.get('voip'), is_owner=form.get('owner'))
     SqlExecuter().insert_object_to_db(table_user)
     return render_template('SignInSecondStep.html', param_list=Configuration.REVIEW_PARAMS)
 
@@ -37,7 +41,6 @@ def owner_sign_in():
     room_number = form.get('room_number')
     bed_number = form.get('bed_number')
     description = form.get('description')
-
     bed_id = generate_bed_id(room_number=room_number, building=building,
                              bed_number=bed_number)
     room_id = generate_room_id(building=building, room_number=room_number)
@@ -51,7 +54,8 @@ def owner_sign_in():
     SqlExecuter().insert_object_to_db(room_table)
 
     for param in Configuration.REVIEW_PARAMS:
-        rating_object = TableRoomRating(room_id=room_id, param_key=param, param_value=form.get(param), user_id=session['user_id'])
+        rating_object = TableRoomRating(room_id=room_id, param_key=param, param_value=form.get(param),
+                                        user_id=session['user_id'])
         SqlExecuter().insert_object_to_db(rating_object)
 
     return render_template('gallery.html')
@@ -61,8 +65,8 @@ def owner_sign_in():
 def renter_sign_in():
     form = request.form
     for param in Configuration.REVIEW_PARAMS:
-        rateing_object = TableRoomRating(param_key=param, param_value=form.get(param), user_id=session['user_id'])
-        SqlExecuter().insert_object_to_db(rateing_object)
+        rating_object = TablePreferences(param_key=param, param_value=form.get(param), user_id=session['user_id'])
+        SqlExecuter().insert_object_to_db(rating_object)
 
     return render_template('gallery.html')
 
