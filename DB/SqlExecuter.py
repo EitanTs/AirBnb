@@ -18,13 +18,16 @@ class SqlExecuter(DbConfiguration):
             rows = cursor.fetchall()
         return self._convert_table_to_json(rows, self._get_cols(cursor.description))
 
-    def execute_query(self, query, params, is_many=False):
+    def execute_query(self, query, params=None, is_many=False):
         with sqlite3.connect(self.db_path) as conn:
             cursor = conn.cursor()
             if is_many:
                 cursor.executemany(query, params)
             else:
-                cursor.execute(query, params)
+                if params:
+                    cursor.execute(query, params)
+                else:
+                    cursor.execute(query)
             conn.commit()
 
     @staticmethod
