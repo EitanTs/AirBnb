@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77715739-be91-4383-b403-56ffdab81730" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/Review.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Manager/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB/AirBnb.db" afterPath="$PROJECT_DIR$/DB/AirBnb.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AirBnb.py" afterPath="$PROJECT_DIR$/AirBnb.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tables/Table.py" afterPath="$PROJECT_DIR$/Tables/Table.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Serializers/BedSerializer.py" afterPath="$PROJECT_DIR$/Serializers/BedSerializer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DB/Queries/SelectQueries.py" afterPath="$PROJECT_DIR$/DB/Queries/SelectQueries.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tests/test.py" afterPath="$PROJECT_DIR$/Tests/test.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views.py" afterPath="$PROJECT_DIR$/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AirBnb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,7 +20,7 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/AirBnb$views.coverage" NAME="views Coverage Results" MODIFIED="1497909076408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AirBnb$test.coverage" NAME="test Coverage Results" MODIFIED="1497926850267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
+    <SUITE FILE_PATH="coverage/AirBnb$test.coverage" NAME="test Coverage Results" MODIFIED="1497936165765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
     <SUITE FILE_PATH="coverage/AirBnb$AirBnb.coverage" NAME="AirBnb Coverage Results" MODIFIED="1497923577472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -49,10 +45,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Review.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Review.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/Review.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9444444" vertical-offset="0" max-vertical-offset="918">
+            <state vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="918">
               <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
               <folding />
             </state>
@@ -72,10 +68,75 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.551724" vertical-offset="0" max-vertical-offset="2516">
-              <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+            <state vertical-scroll-proportion="-8.793103" vertical-offset="1173" max-vertical-offset="2499">
+              <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="85" />
               <folding>
                 <element signature="e#53#120#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Tests/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3371105" vertical-offset="0" max-vertical-offset="353">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginManager.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Manager/LoginManager.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding>
+                <element signature="e#28#64#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BedManager.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Manager/BedManager.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+              <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BedSerializer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Serializers/BedSerializer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
+              <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+              <folding>
+                <element signature="e#20#58#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SelectQueries.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DB/Queries/SelectQueries.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
+              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+              <folding>
+                <marker date="1497935971560" expanded="true" signature="18:304" placeholder="select a.Bed..." />
+                <marker date="1497935971560" expanded="true" signature="331:569" placeholder="select a.Bed..." />
+                <marker date="1497935971560" expanded="true" signature="596:675" placeholder="select Param..Preferences..." />
+                <marker date="1497935971560" expanded="true" signature="701:793" placeholder="select BedId..Beds..." />
+                <marker date="1497935971560" expanded="true" signature="828:892" placeholder="select First..Users..." />
+                <marker date="1497935971560" expanded="true" signature="922:1022" placeholder="select max(d..Availabilities..." />
+                <marker date="1497935971560" expanded="true" signature="1055:1111" placeholder="select Pictu..Rooms..." />
+                <marker date="1497935971560" expanded="true" signature="1148:1251" placeholder="SELECT EXIST..." />
+                <marker date="1497935971560" expanded="true" signature="1166:1240" placeholder="SELECT * FRO..Users..." />
+                <marker date="1497935971560" expanded="true" signature="1282:1331" placeholder="select BedId..Beds..." />
               </folding>
             </state>
           </provider>
@@ -86,16 +147,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
               <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Bed.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Objects/Bed.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="462" max-vertical-offset="1122">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -129,7 +180,6 @@
         <option value="$PROJECT_DIR$/Tables/TableUsers.py" />
         <option value="$PROJECT_DIR$/Objects/User.py" />
         <option value="$PROJECT_DIR$/Objects/RentUser.py" />
-        <option value="$PROJECT_DIR$/Serializers/BedSerializer.py" />
         <option value="$PROJECT_DIR$/Configuration.py" />
         <option value="$PROJECT_DIR$/Manager/BedManager.py" />
         <option value="$PROJECT_DIR$/templates/beds (1).html" />
@@ -141,16 +191,17 @@
         <option value="$PROJECT_DIR$/templates/SignInForm.html" />
         <option value="$PROJECT_DIR$/templates/SignInSecondStep.html" />
         <option value="$PROJECT_DIR$/static/css/SignInForm.css" />
-        <option value="$PROJECT_DIR$/DB/Queries/SelectQueries.py" />
         <option value="$PROJECT_DIR$/Objects/Bed.py" />
         <option value="$PROJECT_DIR$/DB/Queries/UpdeteQueries.py" />
         <option value="$PROJECT_DIR$/DB/SqlExecuter.py" />
         <option value="$PROJECT_DIR$/Tables/TableAvailabilities.py" />
         <option value="$PROJECT_DIR$/AirBnb.py" />
         <option value="$PROJECT_DIR$/Tables/Table.py" />
-        <option value="$PROJECT_DIR$/Tests/test.py" />
-        <option value="$PROJECT_DIR$/views.py" />
         <option value="$PROJECT_DIR$/templates/Review.html" />
+        <option value="$PROJECT_DIR$/DB/Queries/SelectQueries.py" />
+        <option value="$PROJECT_DIR$/Serializers/BedSerializer.py" />
+        <option value="$PROJECT_DIR$/views.py" />
+        <option value="$PROJECT_DIR$/Tests/test.py" />
       </list>
     </option>
   </component>
@@ -263,7 +314,7 @@
       <recent name="C:\Tom\code\AirBnb\templates" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.Review.html">
+  <component name="RunManager" selected="Python.test">
     <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -546,8 +597,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.Review.html" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test" />
+        <item index="0" class="java.lang.String" itemvalue="Python.test" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.Review.html" />
         <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.SignInSecondStep.html (1)" />
         <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.SignInSecondStep.html" />
         <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.SignInForm.html" />
@@ -611,7 +662,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -620,14 +671,14 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32755905" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32755905" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24816984" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -689,6 +740,11 @@
           <line>6</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/Tests/test.py</url>
+          <line>7</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -697,7 +753,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="42" />
+      <option name="time" value="43" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -928,16 +984,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Serializers/BedSerializer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="155" max-vertical-offset="680">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#20#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Configuration.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
@@ -959,16 +1005,6 @@
         <state vertical-scroll-proportion="0.32922536" vertical-offset="34" max-vertical-offset="1173">
           <caret line="13" column="88" selection-start-line="13" selection-start-column="78" selection-end-line="13" selection-end-column="88" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Manager/LoginManager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36408567" vertical-offset="0" max-vertical-offset="607">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-          <folding>
-            <element signature="e#28#64#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1004,24 +1040,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DB/Queries/SelectQueries.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="158" max-vertical-offset="833">
-          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-          <folding>
-            <marker date="1497921260336" expanded="true" signature="-1:-1" placeholder="select a.Bed..." />
-            <marker date="1497921260336" expanded="true" signature="-1:-1" placeholder="select Param..Preferences..." />
-            <marker date="1497921260336" expanded="true" signature="-1:-1" placeholder="select BedId..Beds..." />
-            <marker date="1497921260336" expanded="true" signature="-1:-1" placeholder="select First..Users..." />
-            <marker date="1497921260336" expanded="true" signature="-1:-1" placeholder="select max(d..Availabilities..." />
-            <marker date="1497921260336" expanded="true" signature="-1:-1" placeholder="select Pictu..Rooms..." />
-            <marker date="1497921260336" expanded="true" signature="-1:-1" placeholder="SELECT EXIST..." />
-            <marker date="1497921260336" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..Users..." />
-            <marker date="1497921260336" expanded="true" signature="-1:-1" placeholder="select BedId..Beds..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/SignInForm.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.576923" vertical-offset="331" max-vertical-offset="2040">
@@ -1034,14 +1052,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="1037">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Manager/BedManager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="91" max-vertical-offset="493">
-          <caret line="19" column="20" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -1100,26 +1110,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5284974" vertical-offset="0" max-vertical-offset="386">
-          <caret line="12" column="64" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="64" />
-          <folding>
-            <element signature="e#28#86#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.551724" vertical-offset="0" max-vertical-offset="2516">
-          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-          <folding>
-            <element signature="e#53#120#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/SignInSecondStep.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.576923" vertical-offset="629" max-vertical-offset="2822">
@@ -1130,8 +1120,73 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/Review.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9444444" vertical-offset="0" max-vertical-offset="918">
+        <state vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="918">
           <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manager/BedManager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+          <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DB/Queries/SelectQueries.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+          <folding>
+            <marker date="1497935971560" expanded="true" signature="18:304" placeholder="select a.Bed..." />
+            <marker date="1497935971560" expanded="true" signature="331:569" placeholder="select a.Bed..." />
+            <marker date="1497935971560" expanded="true" signature="596:675" placeholder="select Param..Preferences..." />
+            <marker date="1497935971560" expanded="true" signature="701:793" placeholder="select BedId..Beds..." />
+            <marker date="1497935971560" expanded="true" signature="828:892" placeholder="select First..Users..." />
+            <marker date="1497935971560" expanded="true" signature="922:1022" placeholder="select max(d..Availabilities..." />
+            <marker date="1497935971560" expanded="true" signature="1055:1111" placeholder="select Pictu..Rooms..." />
+            <marker date="1497935971560" expanded="true" signature="1148:1251" placeholder="SELECT EXIST..." />
+            <marker date="1497935971560" expanded="true" signature="1166:1240" placeholder="SELECT * FRO..Users..." />
+            <marker date="1497935971560" expanded="true" signature="1282:1331" placeholder="select BedId..Beds..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Serializers/BedSerializer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
+          <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+          <folding>
+            <element signature="e#20#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.793103" vertical-offset="1173" max-vertical-offset="2499">
+          <caret line="84" column="4" selection-start-line="84" selection-start-column="4" selection-end-line="84" selection-end-column="85" />
+          <folding>
+            <element signature="e#53#120#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manager/LoginManager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#28#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3371105" vertical-offset="0" max-vertical-offset="353">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>

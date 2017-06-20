@@ -83,7 +83,6 @@ def renter_sign_in():
 @app.route('/get_beds/<check_in>/<check_out>')
 def get_beds(check_in, check_out):
     beds_objects = BedManager(session['user_id'], check_in, check_out).get_bed_data()
-    # beds_objects = BedManager('tom', check_in, check_out).get_bed_data() or []
     return render_template('beds.html', bed_objects=beds_objects)
 
 

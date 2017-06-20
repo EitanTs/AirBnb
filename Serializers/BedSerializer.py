@@ -10,6 +10,8 @@ class BedSerializer(object):
 
     @property
     def query(self):
+        if self.check_in is None and self.check_out is None:
+            return SelectQueries.ALL_BED_AVG_RANK
         return SelectQueries.BED_AVG_RANK.format(check_in=self.check_in, check_out=self.check_out)
 
     def _get_beds_json(self):
