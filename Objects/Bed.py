@@ -56,3 +56,8 @@ class Bed(object):
     def _get_picture_path(room_id):
         query = SelectQueries.GET_ROOM_PICTURE_PATH.format(room_id=room_id)
         return SqlExecuter().get_table_content_as_json(query)[0]['PicturePath']
+
+    @staticmethod
+    def get_bed_id_by_user(user_id):
+        query = SelectQueries.BED_ID_FROM_USER_ID.format(user_id=user_id)
+        return SqlExecuter().get_table_content_as_json(query)[0]['BedId']

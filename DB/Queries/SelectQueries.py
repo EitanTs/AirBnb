@@ -37,3 +37,8 @@ where RoomId = '{room_id}' """
 VALIDE_USER_AND_PASSWORD = """ SELECT EXISTS (
   SELECT * FROM Users WHERE UserId = '{user_id}' AND Password = '{password}'
 ) as valid"""
+
+BED_ID_FROM_USER_ID = """
+select BedId
+from Beds
+where UserId = '{user_id}' """

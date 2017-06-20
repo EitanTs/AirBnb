@@ -9,8 +9,10 @@ from Tables.TableRoomRating import TableRoomRating
 from Tables.TableBeds import TableBeds
 from Tables.TableAvailabilities import TableAvailabilities
 from Tables.TablePreferences import TablePreferences
+from Objects.Bed import Bed
 from Manager.BedManager import BedManager
 from Manager.LoginManager import LoginManager
+from DB.Queries import UpdeteQueries
 from DB.SqlExecuter import SqlExecuter
 import Configuration
 
@@ -78,7 +80,8 @@ def renter_sign_in():
 
 @app.route('/get_beds/<check_in>/<check_out>')
 def get_beds(check_in, check_out):
-    beds_objects = BedManager(session['user_id'], check_in, check_out)
+    beds_objects = BedManager(session['user_id'], check_in, check_out).get_bed_data()
+    # beds_objects = BedManager('tom', check_in, check_out).get_bed_data() or []
     return render_template('beds.html', bed_objects=beds_objects)
 
 
@@ -105,6 +108,23 @@ def enter_bed_review():
                                         user_id=current_user)
         SqlExecuter().insert_object_to_db(rating_object)
 
+@app.route('/add_availabilities', methods=['POST'])
+def add_availabilities():
+    form = request.form
+    check_in = form.get('check_in')
+    # check_out = form.get('check_out')
+    current_user = session['user_id']
+    bed_id = Bed.get_bed_id_by_user(current_user)
+
+    availabilities_object = TableAvailabilities(bed_id=bed_id, date=check_in,user_id=current_user, renter_id=None)
+    SqlExecuter().insert_object_to_db(availabilities_object)
+
+    return render_template('homepage.html')
+
+@app.route('/rent_room/<bed_id>/<check_in>')
+def rent_room(bed_id, check_in):
+    update_query = UpdeteQueries.UPDATE_AVIBILITIES.format(user_id=session['user_id'], bed_id=bed_id, check_in=check_in)
+    SqlExecuter().execute_query(update_query)
 
 def generate_bed_id(building, room_number, bed_number):
     return Configuration.BED_ID_FORMAT.format(building=building, room_number=room_number, bed_number=bed_number)
