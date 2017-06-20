@@ -1,0 +1,48 @@
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Building</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+								<div class="radio-inline">
+                                  <label><input type="radio" name="building" value="A"/>A</label>
+                                  <div class="radio-inline">
+                                  <label><input type="radio" name="building" value="B"/>B</label>
+                                </div>
+                                </div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Room Number</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon background"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control background" name="room_number" id="room_number"  placeholder="Enter your room number"/>
+								</div>
+							</div>
+						</div>
+                        <div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Bed Number</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon background"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control background" name="bed_number" id="bed_number"  placeholder="Enter your bed number"/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Room Description</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon background"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control background" name="description" id="description"  placeholder="Enter your Room Description"/>
+								</div>
+							</div>
+						</div>
+						{% for param in param_list %}
+						        <span>{{ param }}</span>
+                                {% for num in range(1,6) %}
+                                <div class="radio-inline">
+                                  <label><input type="radio" name="{{ param }}" value="{{ num }}"/>{{ num }}</label>
+                                </div>
+                                {% endfor %}
+                        {% endfor %}
